@@ -1,0 +1,111 @@
+:root {
+  --bg: #0f1724;
+  --panel: #0b1220;
+  --btn: #1f2937;
+  --accent: #10b981;
+  --text: #e6eef8;
+  --muted: #9fb0c7;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #041125 0%, #071528 100%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+.calculator {
+  width: 360px;
+  max-width: 95vw;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+}
+.display {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: right;
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.expr {
+  font-size: 0.95rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.result {
+  font-size: 1.8rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+button {
+  background: var(--btn);
+  border: 0;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 1.05rem;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+button.operator {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 185, 129, 0.15),
+    rgba(16, 185, 129, 0.08)
+  );
+  color: var(--accent);
+  font-weight: 600;
+}
+button.equal {
+  grid-column: span 2;
+  background: var(--accent);
+  color: #042018;
+  font-weight: 700;
+}
+button.wide {
+  grid-column: span 2;
+}
+button:active {
+  transform: translateY(1px);
+}
+.hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 420px) {
+  .result {
+    font-size: 1.4rem;
+  }
+  button {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
